@@ -8,7 +8,6 @@ on:
 
 jobs:
   plan:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -49,4 +48,3 @@ jobs:
         run: terraform -chdir=${{ matrix.path }} init
       - name: Terraform Apply
         run: terraform -chdir=${{ matrix.path }} apply -auto-approve
-
