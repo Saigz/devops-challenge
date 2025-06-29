@@ -1,6 +1,6 @@
 variable "image" {
   type    = string
-  default = "clickhouse/clickhouse-server:latest"
+  default = "clickhouse/clickhouse-server"
 }
 
 variable "container_name" {
@@ -16,4 +16,19 @@ variable "http_port" {
 variable "native_port" {
   type    = number
   default = 9000
+}
+
+variable "image_tag" {
+  description = "Docker image tag"
+  default = "latest"
+}
+
+variable "clickhouse_user" {
+  type    = string
+  default = "user"
+}
+
+variable "clickhouse_password" {
+  type    = string
+  default = "user"
 }

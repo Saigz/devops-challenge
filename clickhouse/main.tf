@@ -1,10 +1,10 @@
 resource "docker_image" "this" {
-  name = var.image
+  name = "${var.image}:${var.image_tag}"
 }
 
 resource "docker_container" "this" {
   name  = var.container_name
-  image = docker_image.this.latest
+  image = docker_image.this.name
 
   ports {
     internal = 9000
@@ -17,9 +17,14 @@ resource "docker_container" "this" {
   }
 
   volumes {
-    host_path      = "${path.module}/data"
-    container_path = "/var/lib/clickhouse"
+    host_path      = abspath("${path.module}/data") 
+    container_path = "/data"
   }
+
+  env = [
+    "CLICKHOUSE_USER=${var.clickhouse_user}",
+    "CLICKHOUSE_PASSWORD=${var.clickhouse_password}"
+  ]
 
   restart = "unless-stopped"
 }
