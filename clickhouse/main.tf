@@ -17,7 +17,7 @@ resource "docker_container" "this" {
   }
 
   volumes {
-    host_path      = abspath("${path.module}/data") 
+    host_path      = abspath("${path.module}/data")
     container_path = "/data"
   }
 

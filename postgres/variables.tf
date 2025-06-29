@@ -30,5 +30,5 @@ variable "password" {
 
 variable "image_tag" {
   description = "Docker image tag"
-  default = "15"
+  default     = "15"
 }

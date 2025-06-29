@@ -20,7 +20,7 @@ variable "native_port" {
 
 variable "image_tag" {
   description = "Docker image tag"
-  default = "latest"
+  default     = "latest"
 }
 
 variable "clickhouse_user" {

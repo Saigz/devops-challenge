@@ -25,3 +25,8 @@
 2. Реализовать CI через GitHub Actions (validate, plan, apply)
 3. Загрузить данные из публичного API (например, CoinGecko) в ClickHouse/Postgres/Redis
 4. Показать, что данные читаются (запросы/скрины/curl)
+
+## Результат
+![clickhouse](./img/clickhouse.png)
+![postgres](./img/postgres.png)
+![redis](./img/redis.png)
