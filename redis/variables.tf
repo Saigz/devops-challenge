@@ -1,6 +1,6 @@
 variable "image" {
   type    = string
-  default = "redis:7"
+  default = "redis"
 }
 
 variable "container_name" {
@@ -11,4 +11,9 @@ variable "container_name" {
 variable "port" {
   type    = number
   default = 6379
+}
+
+variable "image_tag" {
+  description = "Docker image tag"
+  default = "7"
 }

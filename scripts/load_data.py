@@ -19,6 +19,8 @@ def write_clickhouse(data):
     client = Client(
         host=os.getenv("CLICKHOUSE_HOST", "localhost"),
         port=int(os.getenv("CLICKHOUSE_PORT", 9000)),
+        user=os.getenv("CLICKHOUSE_USER", "user"),
+        password=os.getenv("CLICKHOUSE_PASSWORD", "user"),
     )
     client.execute(
         """
@@ -79,8 +81,8 @@ def write_redis(data):
 def main():
     data = fetch_prices()
     write_clickhouse(data)
-    write_postgres(data)
-    write_redis(data)
+    # write_postgres(data)
+    # write_redis(data)
 
 
 if __name__ == "__main__":

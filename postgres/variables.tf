@@ -1,6 +1,6 @@
 variable "image" {
   type    = string
-  default = "postgres:15"
+  default = "postgres"
 }
 
 variable "container_name" {
@@ -26,4 +26,9 @@ variable "user" {
 variable "password" {
   type    = string
   default = "postgres"
+}
+
+variable "image_tag" {
+  description = "Docker image tag"
+  default = "15"
 }
