@@ -15,5 +15,5 @@ variable "port" {
 
 variable "image_tag" {
   description = "Docker image tag"
-  default = "7"
+  default     = "7"
 }
